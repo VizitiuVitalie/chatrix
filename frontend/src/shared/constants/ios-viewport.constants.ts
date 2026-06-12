@@ -1,0 +1,1 @@
+export const PINCH_ZOOM_SCALE_EPSILON = 1.01;

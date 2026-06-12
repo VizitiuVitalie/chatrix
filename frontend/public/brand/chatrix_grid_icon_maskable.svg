@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none" role="img" aria-label="Chatrix grid icon (maskable)">
+  <defs>
+    <linearGradient id="iconBg" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7E99F4"/>
+      <stop offset="1" stop-color="#8E72EF"/>
+    </linearGradient>
+  </defs>
+  <!-- Full-canvas fill (no rounded corners) — the OS adaptive-icon mask
+       handles the rounding. Glyph positions + sizes match
+       `chatrix_grid_icon.svg` exactly so the logo reads identically
+       under any mask shape. -->
+  <rect x="0" y="0" width="512" height="512" fill="url(#iconBg)"/>
+  <rect x="128" y="128" width="64" height="64" rx="14" fill="#FFFFFF"/>
+  <rect x="222" y="128" width="64" height="64" rx="14" fill="#FFFFFF"/>
+  <rect x="316" y="128" width="64" height="64" rx="14" fill="#FFFFFF"/>
+  <rect x="128" y="222" width="64" height="64" rx="14" fill="#FFFFFF"/>
+  <rect x="128" y="316" width="64" height="64" rx="14" fill="#FFFFFF"/>
+  <rect x="222" y="316" width="64" height="64" rx="14" fill="#FFFFFF"/>
+  <rect x="316" y="316" width="64" height="64" rx="14" fill="#FFFFFF"/>
+</svg>

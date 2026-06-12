@@ -1,0 +1,434 @@
+{
+  "common": {
+    "login": "Login",
+    "register": "Register",
+    "logout": "Log out",
+    "loading": "Loading",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "back": "Back",
+    "appName": "Chatrix",
+    "copy": {
+      "copied": "Copied",
+      "usernameLabel": "Copy username",
+      "fieldLabel": "Copy {{field}}"
+    }
+  },
+  "auth": {
+    "username": "Username",
+    "password": "Password",
+    "nickname": "Display name",
+    "email": "Email",
+    "emailOptional": "Email (optional)",
+    "haveAccount": "Already have an account?",
+    "noAccount": "Don't have an account?",
+    "welcomeBack": "Welcome back",
+    "welcomeBackSubtitle": "Sign in to continue your conversations and stay connected.",
+    "createAccount": "Create your account",
+    "createAccountSubtitle": "Join Chatrix and start meaningful conversations in a calm, focused space.",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "errors": {
+      "usernameRequired": "Username is required.",
+      "usernameTooShort": "Username must be at least 4 characters.",
+      "usernameTooLong": "Username must be at most 32 characters.",
+      "usernameInvalid": "Username may contain letters, digits, _ . - only.",
+      "passwordRequired": "Password is required.",
+      "passwordTooShort": "Password must be at least 8 characters.",
+      "passwordTooLong": "Password is too long.",
+      "passwordNoWhitespace": "Password cannot contain spaces.",
+      "nicknameRequired": "Display name is required.",
+      "nicknameTooShort": "Display name must be at least 2 characters.",
+      "nicknameTooLong": "Display name must be at most 64 characters.",
+      "nicknameEdgeSpaces": "Cannot start or end with a space.",
+      "emailInvalid": "Invalid email.",
+      "emailTooLong": "Email is too long.",
+      "emailNoWhitespace": "Email cannot contain spaces.",
+      "tooManyAttempts": "Too many attempts. Please wait a bit and try again."
+    },
+    "showcase": {
+      "title": "A thoughtful space for meaningful conversations.",
+      "subtitle": "Built for clarity and connection.",
+      "bubble1": "How'd the exam go??",
+      "bubble2": "Survived 😅 barely",
+      "bubble3": "Knew you would 🙌",
+      "bubble4": "Couldn't have done it without you ❤️",
+      "typingLabel": "Maya is typing…",
+      "onlinePill": "{{count}} online",
+      "deliveredBadge": "Delivered"
+    }
+  },
+  "account": {
+    "profile": "My Profile",
+    "settings": "Settings",
+    "offline": "Offline",
+    "online": "Online"
+  },
+  "presence": {
+    "online": "online",
+    "lastSeen": {
+      "justNow": "last seen just now",
+      "minutesAgo_one": "last seen {{count}} minute ago",
+      "minutesAgo_other": "last seen {{count}} minutes ago",
+      "hoursAgo_one": "last seen {{count}} hour ago",
+      "hoursAgo_other": "last seen {{count}} hours ago",
+      "yesterdayAt": "last seen yesterday at {{time}}",
+      "thisWeek": "last seen {{day}} at {{time}}",
+      "older": "last seen on {{date}}"
+    }
+  },
+  "activity": {
+    "typing": {
+      "direct": "typing…",
+      "one": "{{name}} is typing…",
+      "two": "{{a}} and {{b}} are typing…",
+      "many": "{{count}} people are typing…"
+    },
+    "attachment": {
+      "direct": "sending a file…",
+      "one": "{{name}} is sending a file…",
+      "two": "{{a}} and {{b}} are sending files…",
+      "many": "{{count}} people are sending files…"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "language": {
+      "heading": "Language",
+      "description": "Choose the language used across the app."
+    },
+    "theme": {
+      "heading": "Theme",
+      "description": "Light, dark, or follow your system. The choice is saved to your account and applies across devices.",
+      "options": {
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System"
+      }
+    },
+    "notifications": {
+      "heading": "Notifications",
+      "description": "Get a system notification when you receive a message in a background tab.",
+      "pushLabel": "Web push notifications",
+      "deniedHint": "Notifications are blocked. Allow them in your browser's site settings, then reload the page.",
+      "unsupportedHint": "Your browser doesn't support web push notifications.",
+      "errors": {
+        "permissionDismissed": "You closed the permission prompt. Click the switch again to retry.",
+        "vapidLoadFailed": "Couldn't load notification settings from the server. Refresh the page and try again.",
+        "subscribeFailed": "Couldn't enable notifications. Check your connection and try again.",
+        "rollbackFailed": "Notifications are in an inconsistent state. Toggle the switch again to resync."
+      },
+      "dismissError": "Dismiss"
+    },
+    "install": {
+      "heading": "Install app",
+      "description": "Install Chatrix on your device — get its own icon, splash screen, and a window without the browser address bar.",
+      "installButton": "Install",
+      "installedHint": "Chatrix is already installed on this device.",
+      "iosInstructions": "On iOS, open the Share menu in Safari and tap \"Add to Home Screen\".",
+      "unsupportedHint": "Your browser doesn't expose an install button. Try Chrome, Edge, or Safari (macOS Sonoma+)."
+    }
+  },
+  "profile": {
+    "title": "My Profile",
+    "savedHint": "Saved",
+    "fields": {
+      "username": "Username",
+      "usernameHint": "Your account handle. Cannot be changed.",
+      "nickname": "Display name",
+      "bio": "About",
+      "bioPlaceholder": "A short blurb people see on your profile."
+    },
+    "actions": {
+      "save": "Save changes"
+    },
+    "avatar": {
+      "uploadLabel": "Change avatar",
+      "clearLabel": "Remove avatar",
+      "undoLabel": "Undo pending change",
+      "viewLabel": "View photo"
+    },
+    "errors": {
+      "nicknameRequired": "Display name is required.",
+      "nicknameTooShort": "Display name must be at least 2 characters.",
+      "nicknameWhitespace": "Display name cannot start or end with a space.",
+      "bioTooLong": "Bio is too long."
+    },
+    "storage": {
+      "heading": "Storage",
+      "usedOf": "{{used}} of {{quota}}",
+      "exemptHint": "Only chat attachments count toward this limit. Avatars are exempt.",
+      "error": "Couldn't load storage info."
+    },
+    "files": {
+      "heading": "My files",
+      "empty": "No attachments yet.",
+      "error": "Couldn't load your files.",
+      "downloadLabel": "Download",
+      "deleteLabel": "Delete",
+      "pageOf": "Page {{page}} of {{total}}",
+      "nextPage": "Next page",
+      "prevPage": "Previous page",
+      "sort": {
+        "sizeDesc": "Largest first",
+        "sizeAsc": "Smallest first",
+        "newest": "Newest first",
+        "oldest": "Oldest first"
+      },
+      "confirmDelete": {
+        "title": "Delete this file?",
+        "description": "\"{{name}}\" will be removed permanently and any chat that referenced it will lose the attachment. This cannot be undone.",
+        "confirmLabel": "Delete"
+      }
+    }
+  },
+  "peerProfile": {
+    "title": "User profile",
+    "loadError": "Couldn't load this profile.",
+    "fields": {
+      "username": "Username",
+      "bio": "About"
+    }
+  },
+  "chats": {
+    "title": "Chats",
+    "search": "Search chats, people, groups",
+    "newChat": "New chat",
+    "fab": {
+      "newChat": "New chat",
+      "newGroup": "New group"
+    },
+    "tabs": {
+      "all": "All",
+      "unread": "Unread",
+      "groups": "Groups"
+    },
+    "emptyListTitle": "Your inbox is quiet",
+    "emptyListSubtitle": "Start a conversation to see it here. Anyone you message will appear in this list.",
+    "noSelection": {
+      "title": "No conversation open",
+      "subtitle": "Select a chat from the list, or start a new one with the button below."
+    },
+    "loadError": "Couldn't load chats.",
+    "retry": "Retry",
+    "noSearchResults": "Nothing matched \"{{query}}\".",
+    "noFilterResults": "No chats match this filter.",
+    "attachmentOnly": "📎 Attachment",
+    "newChatDialog": {
+      "directTitle": "New direct chat",
+      "directDescription": "Find someone by username or display name to start a conversation.",
+      "groupTitle": "New group",
+      "groupDescription": "Pick a name and invite at least one person.",
+      "searchPlaceholder": "Search...",
+      "groupNamePlaceholder": "Group name",
+      "groupNameRequired": "Group name is required.",
+      "groupNameTooLong": "Group name must be at most 100 characters.",
+      "minMembers": "Add at least one member.",
+      "selected": "Selected ({{count}})",
+      "removeMember": "Remove {{name}}",
+      "typeMore": "Type at least {{min}} characters to search.",
+      "searching": "Searching…",
+      "noResults": "No users matched \"{{query}}\".",
+      "submitDirect": "Start chat",
+      "submitGroup": "Create group",
+      "createError": "Couldn't create the chat. Please try again.",
+      "searchError": "Couldn't run the search.",
+      "draftEmpty": "Say hi to {{name}} — your message creates the chat."
+    },
+    "rowMenu": {
+      "clearHistory": "Clear my history",
+      "deleteDirect": "Delete chat",
+      "deleteGroup": "Delete group",
+      "leaveGroup": "Leave group"
+    },
+    "headerMenu": {
+      "openLabel": "Chat actions"
+    },
+    "info": {
+      "title": "Info",
+      "titleDirect": "User info",
+      "titleGroup": "Group info",
+      "memberProfile": {
+        "title": "Member profile",
+        "back": "Back to group",
+        "notFound": "Member no longer available."
+      },
+      "username": "Username",
+      "email": "Email",
+      "bio": "About",
+      "viewAvatar": "View avatar",
+      "changeAvatar": "Change group photo",
+      "removeAvatar": "Remove group photo",
+      "removeAvatarConfirm": {
+        "title": "Remove group photo?",
+        "description": "Members will see the default group icon instead. You can upload a new photo any time.",
+        "confirm": "Remove"
+      },
+      "memberCount_one": "{{count}} member",
+      "memberCount_other": "{{count}} members",
+      "membersHeading": "Members",
+      "youSuffix": "(you)",
+      "role": {
+        "owner": "Owner",
+        "admin": "Admin",
+        "member": "Member"
+      },
+      "rename": {
+        "editLabel": "Rename group",
+        "errorBlank": "Name cannot be blank."
+      },
+      "actions": {
+        "menuLabel": "Member actions",
+        "promoteToAdmin": "Make admin",
+        "demoteToMember": "Demote to member",
+        "transferOwnership": "Transfer ownership",
+        "removeFromGroup": "Remove from group"
+      },
+      "addMember": {
+        "button": "Add",
+        "title": "Add member",
+        "description": "Pick a user to add to this group.",
+        "searchPlaceholder": "Search by username or nickname…"
+      },
+      "leaveGroup": {
+        "button": "Leave group"
+      },
+      "confirmKick": {
+        "title": "Remove {{name}}?",
+        "description": "They will lose access to this group and its messages. They can be re-added later.",
+        "confirmLabel": "Remove"
+      },
+      "confirmTransfer": {
+        "title": "Transfer ownership to {{name}}?",
+        "description": "They will become the new owner. You will be demoted to admin and will no longer be able to rename, delete, or change member roles in this group.",
+        "confirmLabel": "Transfer ownership"
+      },
+      "confirmLeave": {
+        "title": "Leave this group?",
+        "description": "You will lose access to the group and its messages. The other members will not be notified.",
+        "confirmLabel": "Leave group"
+      },
+      "ownerLeave": {
+        "title": "Leaving as owner",
+        "description": "Owners can't leave directly. Choose one of the options below.",
+        "deleteOption": {
+          "label": "Delete the entire group",
+          "hint": "All messages and attachments are removed for every member. Cannot be undone."
+        },
+        "transferOption": {
+          "label": "Transfer ownership and leave",
+          "hint": "Pick another member to become the new owner. You will be demoted to admin and then leave the group.",
+          "disabledHint": "There is nobody else in the group to transfer ownership to."
+        },
+        "pick": {
+          "title": "Pick the new owner",
+          "description": "They will become the owner. You will be demoted to admin and immediately leave the group.",
+          "transferring": "Transferring ownership and leaving…"
+        }
+      }
+    },
+    "deleteChat": {
+      "error": "Couldn't delete: {{reason}}",
+      "direct": {
+        "title": "Delete chat with {{name}}?",
+        "description": "Choose whether to delete the chat only for you, or for {{name}} as well. Either way, this cannot be undone.",
+        "justForMe": "Delete just for me",
+        "forBoth": "Delete for me and {{name}}"
+      },
+      "group": {
+        "title": "Delete group {{name}}?",
+        "description": "The group, its messages, and all attachments will be permanently removed for every member. This cannot be undone.",
+        "confirm": "Delete group"
+      }
+    }
+  },
+  "chat": {
+    "notFound": "Chat not found.",
+    "loadError": "Couldn't load messages.",
+    "edited": "edited",
+    "jumpToBottom": "Jump to latest message",
+    "dateSeparator": {
+      "today": "Today",
+      "yesterday": "Yesterday"
+    },
+    "composer": {
+      "placeholder": "Type a message…",
+      "editPlaceholder": "Edit your message…",
+      "attach": "Attach a file",
+      "emoji": "Insert emoji",
+      "send": "Send",
+      "save": "Save edit",
+      "editing": "Editing message",
+      "cancelEdit": "Cancel edit",
+      "attachSheet": {
+        "title": "Attach files",
+        "chooseFiles": "Choose files"
+      },
+      "dropTitle": "Drop files to attach",
+      "dropSubtitle": "Up to {{max}} files per message · {{sizeMb}} MB each",
+      "attachments": {
+        "tooLarge": "{{name}} is larger than {{sizeMb}} MB.",
+        "unsupported": "{{name}} type is not supported.",
+        "maxFiles": "Up to {{max}} attachments per message.",
+        "offline": "You are offline. Reconnect and retry.",
+        "uploadFailed": "Upload failed",
+        "retry": "Retry",
+        "remove": "Remove"
+      }
+    },
+    "message": {
+      "sending": "Sending…",
+      "failed": "Failed to send",
+      "retry": "Retry",
+      "attachmentUnavailable": "Attachment no longer available"
+    },
+    "viewer": {
+      "download": "Download",
+      "close": "Close",
+      "zoomIn": "Zoom in",
+      "zoomOut": "Zoom out",
+      "loadError": "Couldn't load the file.",
+      "speed": "Speed",
+      "video": {
+        "loading": "Loading video ({{size}})…",
+        "unsupported": {
+          "title": "Video format not supported",
+          "description": "Your browser can't play {{format}}. Download the file to open it in another player."
+        }
+      }
+    },
+    "actions": {
+      "copy": "Copy",
+      "edit": "Edit",
+      "delete": "Delete",
+      "downloadAll": "Download all ({{count}})"
+    },
+    "deleteConfirm": {
+      "title": "Delete this message?",
+      "description": "It will be removed for everyone in this chat. This cannot be undone.",
+      "confirm": "Delete"
+    }
+  },
+  "pwa": {
+    "banner": {
+      "title": "Install Chatrix",
+      "description": "Get a faster, native-app experience with its own icon, splash screen, and window.",
+      "install": "Install"
+    },
+    "topbar": {
+      "install": "Install Chatrix"
+    },
+    "iosModal": {
+      "title": "Install Chatrix on iOS",
+      "description": "On iOS, web apps install through Safari only",
+      "step1": "Open this page in Safari, then tap the Share button",
+      "step2": "Scroll the bottom action list and tap \"Add to Home Screen\"",
+      "step3": "Tap \"Add\" in the top-right to confirm"
+    },
+    "update": {
+      "title": "A new version is available",
+      "action": "Reload"
+    }
+  }
+}

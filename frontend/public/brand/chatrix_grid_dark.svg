@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none" role="img" aria-label="Chatrix grid dark logo">
+  <defs>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#95A7D8" flood-opacity="0.20"/>
+    </filter>
+    <linearGradient id="darkBg" x1="60" y1="52" x2="456" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2B416E"/>
+      <stop offset="1" stop-color="#18284C"/>
+    </linearGradient>
+    <linearGradient id="nightBrand" x1="132" y1="136" x2="386" y2="386" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C4D3FF"/>
+      <stop offset="1" stop-color="#A98BF5"/>
+    </linearGradient>
+  </defs>
+  <rect x="48" y="48" width="416" height="416" rx="92" fill="url(#darkBg)" filter="url(#softShadow)"/>
+  <rect x="152" y="152" width="52" height="52" rx="12" fill="url(#nightBrand)"/>
+  <rect x="228" y="152" width="52" height="52" rx="12" fill="url(#nightBrand)"/>
+  <rect x="304" y="152" width="52" height="52" rx="12" fill="url(#nightBrand)"/>
+  <rect x="152" y="228" width="52" height="52" rx="12" fill="url(#nightBrand)"/>
+  <rect x="152" y="304" width="52" height="52" rx="12" fill="url(#nightBrand)"/>
+  <rect x="228" y="304" width="52" height="52" rx="12" fill="url(#nightBrand)"/>
+  <rect x="304" y="304" width="52" height="52" rx="12" fill="url(#nightBrand)"/>
+</svg>

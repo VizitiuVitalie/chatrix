@@ -1,0 +1,2 @@
+export const LONG_PRESS_DELAY_MS = 250;
+export const LONG_PRESS_MOVE_TOLERANCE_PX = 10;

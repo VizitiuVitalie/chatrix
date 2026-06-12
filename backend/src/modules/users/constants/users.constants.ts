@@ -1,0 +1,6 @@
+export const DEFAULT_SEARCH_LIMIT = 20;
+
+export const USER_SEARCH_THROTTLE_LIMIT = 50;
+export const USER_SEARCH_THROTTLE_TTL_MS = 10_000;
+
+export const BIO_MAX_LENGTH = 280;

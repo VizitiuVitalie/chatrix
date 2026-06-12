@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none" role="img" aria-label="Chatrix grid light logo">
+  <defs>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#95A7D8" flood-opacity="0.20"/>
+    </filter>
+    <linearGradient id="brand" x1="122" y1="120" x2="391" y2="392" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7F98F3"/>
+      <stop offset="1" stop-color="#7368E6"/>
+    </linearGradient>
+  </defs>
+  <rect x="48" y="48" width="416" height="416" rx="92" fill="#FFFFFF" filter="url(#softShadow)"/>
+  <rect x="152" y="152" width="52" height="52" rx="12" fill="url(#brand)"/>
+  <rect x="228" y="152" width="52" height="52" rx="12" fill="url(#brand)"/>
+  <rect x="304" y="152" width="52" height="52" rx="12" fill="url(#brand)"/>
+  <rect x="152" y="228" width="52" height="52" rx="12" fill="url(#brand)"/>
+  <rect x="152" y="304" width="52" height="52" rx="12" fill="url(#brand)"/>
+  <rect x="228" y="304" width="52" height="52" rx="12" fill="url(#brand)"/>
+  <rect x="304" y="304" width="52" height="52" rx="12" fill="url(#brand)"/>
+</svg>

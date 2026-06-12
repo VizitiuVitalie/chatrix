@@ -1,0 +1,12 @@
+export const MIN_MESSAGE_LENGTH = 1;
+export const MAX_MESSAGE_LENGTH = 4000;
+
+export const CLIENT_MESSAGE_ID_MAX_LENGTH = 64;
+
+export const SEND_MESSAGE_THROTTLE_LIMIT = 30;
+export const SEND_MESSAGE_THROTTLE_TTL_MS = 10_000;
+
+export const DEFAULT_MESSAGE_PAGE_LIMIT = 50;
+
+export const EDIT_WINDOW_MS = 10 * 60 * 1000;
+export const SENDER_DELETE_WINDOW_MS = 60 * 60 * 1000;

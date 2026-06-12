@@ -1,0 +1,15 @@
+export const RealtimeEvent = {
+  MESSAGE_CREATED: 'message:created',
+  MESSAGE_EDITED: 'message:edited',
+  MESSAGE_DELETED: 'message:deleted',
+  CHAT_CREATED: 'chat:created',
+  CHAT_UPDATED: 'chat:updated',
+  CHAT_DELETED: 'chat:deleted',
+  CHAT_MEMBER_ADDED: 'chat-member:added',
+  CHAT_MEMBER_REMOVED: 'chat-member:removed',
+  CHAT_MEMBER_ROLE_CHANGED: 'chat-member:role-changed',
+  CHAT_MEMBER_READ: 'chat-member:read',
+  USER_UPDATED: 'user:updated',
+  USER_PRESENCE: 'user:presence',
+  USER_ACTIVITY: 'user:activity',
+} as const;

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none" role="img" aria-label="Chatrix grid favicon">
+  <defs>
+    <linearGradient id="brand" x1="122" y1="120" x2="391" y2="392" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7F98F3"/>
+      <stop offset="1" stop-color="#7368E6"/>
+    </linearGradient>
+  </defs>
+  <rect x="150" y="150" width="56" height="56" rx="13" fill="url(#brand)"/>
+  <rect x="228" y="150" width="56" height="56" rx="13" fill="url(#brand)"/>
+  <rect x="306" y="150" width="56" height="56" rx="13" fill="url(#brand)"/>
+  <rect x="150" y="228" width="56" height="56" rx="13" fill="url(#brand)"/>
+  <rect x="150" y="306" width="56" height="56" rx="13" fill="url(#brand)"/>
+  <rect x="228" y="306" width="56" height="56" rx="13" fill="url(#brand)"/>
+  <rect x="306" y="306" width="56" height="56" rx="13" fill="url(#brand)"/>
+</svg>

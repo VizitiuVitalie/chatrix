@@ -1,0 +1,251 @@
+@import 'tailwindcss';
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/inter";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-heading: var(--font-sans);
+    --font-sans: 'Inter Variable', system-ui, sans-serif;
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --color-bubble-out: var(--bubble-out);
+    --color-bubble-in: var(--bubble-in);
+    --color-online: var(--online);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+    /* CalmChat palette — see frontend/docs/design.md §2 */
+    --background: oklch(0.98 0.006 268);      /* #F6F7FB */
+    --foreground: oklch(0.28 0.04 270);       /* #26324D */
+    --card: oklch(1 0 0);                     /* #FFFFFF */
+    --card-foreground: oklch(0.28 0.04 270);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.28 0.04 270);
+    --primary: oklch(0.62 0.13 268);          /* #6F86D6 */
+    --primary-foreground: oklch(1 0 0);
+    --secondary: oklch(0.94 0.012 268);       /* #E9EDF7 */
+    --secondary-foreground: oklch(0.28 0.04 270);
+    --muted: oklch(0.96 0.008 268);           /* #F1F3F8 */
+    --muted-foreground: oklch(0.55 0.04 263); /* #6F7D99 */
+    --accent: oklch(0.81 0.04 305);           /* #C8BDD8 */
+    --accent-foreground: oklch(0.28 0.04 270);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.89 0.013 263);          /* #D8DFEE */
+    --input: oklch(0.89 0.013 263);
+    --ring: oklch(0.62 0.13 268);
+    --chart-1: oklch(0.87 0 0);
+    --chart-2: oklch(0.556 0 0);
+    --chart-3: oklch(0.439 0 0);
+    --chart-4: oklch(0.371 0 0);
+    --chart-5: oklch(0.269 0 0);
+    --radius: 0.875rem;
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.708 0 0);
+    /* Chat-specific tokens — bubbles + presence dot.
+       Bubble L/C values tightened from the design.md baseline so the
+       inner surface separates clearly from the conversation pane (which
+       sits at --background L=0.98). Original spec values produced a
+       2-3% lightness gap that read as washed-out against white card
+       chrome; user-flagged 2026-05-29 + reconfirmed 2026-06-05. Bubble-
+       in chroma pushed further on 2026-06-05 — the previous value still
+       read as a soft, fuzzy edge against the pane background; bumping
+       chroma + slight lightness drop matches the bubble-out's clarity. */
+    --bubble-out: oklch(0.90 0.045 252);      /* deeper sky-blue   */
+    --bubble-in: oklch(0.91 0.025 268);       /* cool gray, sharp edge */
+    --online: oklch(0.72 0.14 154);           /* #5EBB8A */
+    --scrollbar-thumb: oklch(0.80 0.02 263);        /* soft gray-blue */
+    --scrollbar-thumb-hover: oklch(0.68 0.03 263);
+    color-scheme: light;
+}
+
+.dark {
+    /* Dark palette — anchored to the brand purple-blue gradient
+       (Chatrix mark uses #2B416E → #18284C for the dark icon
+       variant). Surfaces stay in the same hue family as light mode
+       so component code never has to special-case anything beyond
+       the CSS variables. Foreground / muted-foreground share the
+       same chroma as light mode, only the lightness is inverted. */
+    --background: oklch(0.18 0.04 270);       /* deep navy           */
+    --foreground: oklch(0.95 0.01 268);       /* near-white          */
+    --card: oklch(0.22 0.04 270);             /* slightly above bg   */
+    --card-foreground: oklch(0.95 0.01 268);
+    --popover: oklch(0.24 0.04 270);
+    --popover-foreground: oklch(0.95 0.01 268);
+    --primary: oklch(0.72 0.12 268);          /* lighter sky-blue    */
+    --primary-foreground: oklch(0.18 0.04 270);
+    --secondary: oklch(0.28 0.035 270);
+    --secondary-foreground: oklch(0.95 0.01 268);
+    --muted: oklch(0.26 0.035 270);
+    --muted-foreground: oklch(0.68 0.025 263);
+    --accent: oklch(0.45 0.05 305);           /* muted lavender      */
+    --accent-foreground: oklch(0.95 0.01 268);
+    --destructive: oklch(0.65 0.20 25);
+    --border: oklch(0.32 0.025 263);
+    --input: oklch(0.32 0.025 263);
+    --ring: oklch(0.72 0.12 268);
+    --chart-1: oklch(0.87 0 0);
+    --chart-2: oklch(0.556 0 0);
+    --chart-3: oklch(0.439 0 0);
+    --chart-4: oklch(0.371 0 0);
+    --chart-5: oklch(0.269 0 0);
+    --sidebar: oklch(0.22 0.04 270);
+    --sidebar-foreground: oklch(0.95 0.01 268);
+    --sidebar-primary: oklch(0.72 0.12 268);
+    --sidebar-primary-foreground: oklch(0.18 0.04 270);
+    --sidebar-accent: oklch(0.28 0.035 270);
+    --sidebar-accent-foreground: oklch(0.95 0.01 268);
+    --sidebar-border: oklch(0.32 0.025 263);
+    --sidebar-ring: oklch(0.72 0.12 268);
+    /* Bubble tokens — outgoing keeps the sky-blue identity (just
+       deepened); incoming sits between background and card so it
+       still reads as a discrete surface against the conversation
+       pane. */
+    --bubble-out: oklch(0.42 0.12 252);       /* saturated deep sky  */
+    --bubble-in: oklch(0.30 0.03 268);        /* between bg and card */
+    --online: oklch(0.72 0.14 154);           /* same green          */
+    --scrollbar-thumb: oklch(0.40 0.03 270);        /* above border    */
+    --scrollbar-thumb-hover: oklch(0.52 0.03 270);
+    color-scheme: dark;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    /* iOS Safari shows a system "Copy / Look Up / Share" callout on
+       long-press of any selectable text. We surface our own Copy via
+       the bubble ContextMenu (long-press on mobile), so the native
+       callout is redundant and visually competes with our menu.
+       Tailwind's `select-none` covers `-webkit-user-select` but NOT
+       `-webkit-touch-callout` — set it once here at the body level.
+       Form controls (input / textarea) override `user-select` via UA
+       stylesheet AND need the callout for paste / replace, so they
+       are immune. */
+    -webkit-touch-callout: none;
+    }
+  html {
+    @apply font-sans;
+    /* Kill the double-tap-to-zoom gesture (and its 300ms click delay)
+       on both platforms. Pinch-zoom is handled separately in
+       `usePageZoomLock`; `manipulation` still permits panning and the
+       lightbox's own zoom. */
+    touch-action: manipulation;
+    }
+  /* Tailwind v4 drops the implicit `cursor: pointer` on buttons; bring it
+     back so every clickable element invites the cursor — applied to
+     <a>, <button>, and role=button widgets used by shadcn primitives. */
+  a, button, [role="button"] {
+    cursor: pointer;
+    -webkit-user-drag: none;
+    }
+  /* Disabled interactive elements stay readable but signal "no". */
+  button:disabled, [role="button"][aria-disabled="true"], a[aria-disabled="true"] {
+    cursor: not-allowed;
+    }
+}
+
+/* iOS Safari auto-zooms when a focused input's font-size is < 16px,
+   which makes the page scrollable and drags the fixed header bars out
+   of view (and never zooms back out). Force >= 16px on touch devices so
+   the zoom never triggers; desktop keeps its smaller design sizes.
+   Unlayered so it wins over Tailwind's `text-*` utilities without
+   !important. */
+@media (pointer: coarse) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+  textarea,
+  select {
+    font-size: 16px;
+  }
+  /* Android renders the password-mask bullet (•) with wobbly metrics in
+     the Inter variable font — the dots sit crooked and snap into place
+     on reflow. A stable system font (Roboto on Android) keeps them
+     aligned, and an even letter-spacing tidies the row; revealed text
+     switches to type=text and keeps Inter. Touch-only so the desktop
+     password field is left untouched. */
+  input[type="password"] {
+    font-family: system-ui, sans-serif;
+    letter-spacing: 0.05em;
+  }
+}
+
+@media (max-width: 1023.98px) {
+  .chatrix-ios-draft-conversation-open [data-top-action-bar] {
+    display: none;
+  }
+}
+
+/* Desktop scrollbars — theme-aware. Native scrollbars followed the OS
+   color-scheme (which read inverted: pale thumb in dark mode, dark thumb
+   in light mode); `color-scheme` per theme plus an explicit thumb from
+   the palette fixes that and gives one consistent thin bar. Gated to
+   fine pointers so touch keeps its native overlay scrollbars — styling
+   ::-webkit-scrollbar on mobile turns those into always-on classic bars
+   that eat layout width. */
+@media (pointer: fine) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-thumb-hover);
+  }
+}

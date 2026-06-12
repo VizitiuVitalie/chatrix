@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" translate="no">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Suppress Chrome's "translate this page?" bar. The UI ships in
+         English while the user's browser/OS is another language, so
+         Chrome offers a translation that would mangle our own chrome
+         and field labels. `translate="no"` on <html> plus this Google-
+         specific meta opt the page out of automatic translation. -->
+    <meta name="google" content="notranslate" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- PWA manifest. Drives Chrome/Edge install prompts, WebAPK
+         generation on Android, and standalone-mode rendering once
+         installed. The service worker at /sw.js (registered for
+         push by `sw-registration.service.ts`) already satisfies the
+         other half of the installability contract. -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <!-- iOS doesn't use the manifest's icons; it reads this tag for
+         the home-screen icon when the user picks Share → Add to
+         Home Screen. PNG (180×180) because iOS doesn't render SVG
+         icons in this slot. -->
+    <link rel="apple-touch-icon" href="/icons/icon-180-apple.png?v=2" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Chatrix" />
+    <!-- `interactive-widget=resizes-content` makes Chromium/Android
+         shrink the LAYOUT viewport for the on-screen keyboard, so
+         `100dvh` reflows the flex columns above it. iOS/WebKit does NOT
+         implement this token (WebKit bug #259770) and instead pans only
+         the visual viewport; the iOS keyboard fix therefore lives in
+         `useKeyboardViewportFix` (locks the document + clamps the shell
+         to visualViewport.height via `--app-vh`). `viewport-fit=cover`
+         unlocks env(safe-area-inset-*) on notched devices. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content" />
+    <meta name="theme-color" content="#6F86D6" />
+    <title>Chatrix</title>
+  </head>
+  <body>
+    <script>
+      // Pre-paint theme bootstrap — runs synchronously before the SPA
+      // bundle parses, so `<html class="dark">` is on the document
+      // before the first paint. Without this the Loading… guard
+      // would render in OS-preferred theme until React mounts and
+      // `/auth/me` resolves the user's saved theme (200–500 ms flash).
+      //
+      // Storage key must stay in sync with THEME_STORAGE_KEY in
+      // `src/modules/users/context/theme-provider.tsx`.
+      (function () {
+        try {
+          var stored = localStorage.getItem('chatrix.theme');
+          var systemDark = window.matchMedia(
+            '(prefers-color-scheme: dark)',
+          ).matches;
+          var dark =
+            stored === 'dark' ||
+            (stored === 'system' && systemDark) ||
+            (!stored && systemDark);
+          if (dark) document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/app/main.tsx"></script>
+  </body>
+</html>

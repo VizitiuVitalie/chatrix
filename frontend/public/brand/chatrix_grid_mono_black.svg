@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none" role="img" aria-label="Chatrix grid mono black">
+  <defs>
+
+  </defs>
+  <rect x="152" y="152" width="52" height="52" rx="12" fill="#26324D"/>
+  <rect x="228" y="152" width="52" height="52" rx="12" fill="#26324D"/>
+  <rect x="304" y="152" width="52" height="52" rx="12" fill="#26324D"/>
+  <rect x="152" y="228" width="52" height="52" rx="12" fill="#26324D"/>
+  <rect x="152" y="304" width="52" height="52" rx="12" fill="#26324D"/>
+  <rect x="228" y="304" width="52" height="52" rx="12" fill="#26324D"/>
+  <rect x="304" y="304" width="52" height="52" rx="12" fill="#26324D"/>
+</svg>

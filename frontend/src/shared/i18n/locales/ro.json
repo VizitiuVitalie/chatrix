@@ -1,0 +1,437 @@
+{
+  "common": {
+    "login": "Autentificare",
+    "register": "Înregistrare",
+    "logout": "Deconectare",
+    "loading": "Se încarcă",
+    "submit": "Trimite",
+    "cancel": "Anulează",
+    "save": "Salvează",
+    "back": "Înapoi",
+    "appName": "Chatrix",
+    "copy": {
+      "copied": "Copiat",
+      "usernameLabel": "Copiază numele utilizatorului",
+      "fieldLabel": "Copiază {{field}}"
+    }
+  },
+  "auth": {
+    "username": "Nume utilizator",
+    "password": "Parolă",
+    "nickname": "Nume afișat",
+    "email": "Email",
+    "emailOptional": "Email (opțional)",
+    "haveAccount": "Ai deja un cont?",
+    "noAccount": "Nu ai un cont?",
+    "welcomeBack": "Bine ai revenit",
+    "welcomeBackSubtitle": "Conectează-te pentru a-ți continua conversațiile și a rămâne aproape.",
+    "createAccount": "Creează-ți contul",
+    "createAccountSubtitle": "Înscrie-te pe Chatrix și începe conversații semnificative într-un spațiu calm și concentrat.",
+    "showPassword": "Arată parola",
+    "hidePassword": "Ascunde parola",
+    "errors": {
+      "usernameRequired": "Numele de utilizator este obligatoriu.",
+      "usernameTooShort": "Numele de utilizator trebuie să aibă cel puțin 4 caractere.",
+      "usernameTooLong": "Numele de utilizator trebuie să aibă cel mult 32 de caractere.",
+      "usernameInvalid": "Numele poate conține doar litere, cifre, _ . -.",
+      "passwordRequired": "Parola este obligatorie.",
+      "passwordTooShort": "Parola trebuie să aibă cel puțin 8 caractere.",
+      "passwordTooLong": "Parola este prea lungă.",
+      "passwordNoWhitespace": "Parola nu poate conține spații.",
+      "nicknameRequired": "Numele afișat este obligatoriu.",
+      "nicknameTooShort": "Numele afișat trebuie să aibă cel puțin 2 caractere.",
+      "nicknameTooLong": "Numele afișat trebuie să aibă cel mult 64 de caractere.",
+      "nicknameEdgeSpaces": "Nu poate începe sau se termina cu spațiu.",
+      "emailInvalid": "Email invalid.",
+      "emailTooLong": "Emailul este prea lung.",
+      "emailNoWhitespace": "Emailul nu poate conține spații.",
+      "tooManyAttempts": "Prea multe încercări. Așteaptă puțin și încearcă din nou."
+    },
+    "showcase": {
+      "title": "Un spațiu pentru conversații cu sens.",
+      "subtitle": "Construit pentru claritate și conexiune.",
+      "bubble1": "Cum a fost examenul??",
+      "bubble2": "Abia am supraviețuit 😅",
+      "bubble3": "Știam că reușești 🙌",
+      "bubble4": "N-aș fi reușit fără tine ❤️",
+      "typingLabel": "Maya scrie…",
+      "onlinePill": "{{count}} online",
+      "deliveredBadge": "Livrat"
+    }
+  },
+  "account": {
+    "profile": "Profilul meu",
+    "settings": "Setări",
+    "offline": "Deconectat",
+    "online": "Online"
+  },
+  "presence": {
+    "online": "online",
+    "lastSeen": {
+      "justNow": "văzut acum",
+      "minutesAgo_one": "văzut acum {{count}} minut",
+      "minutesAgo_few": "văzut acum {{count}} minute",
+      "minutesAgo_other": "văzut acum {{count}} de minute",
+      "hoursAgo_one": "văzut acum {{count}} oră",
+      "hoursAgo_few": "văzut acum {{count}} ore",
+      "hoursAgo_other": "văzut acum {{count}} de ore",
+      "yesterdayAt": "văzut ieri la {{time}}",
+      "thisWeek": "văzut {{day}} la {{time}}",
+      "older": "văzut pe {{date}}"
+    }
+  },
+  "activity": {
+    "typing": {
+      "direct": "scrie…",
+      "one": "{{name}} scrie…",
+      "two": "{{a}} și {{b}} scriu…",
+      "many": "{{count}} persoane scriu…"
+    },
+    "attachment": {
+      "direct": "trimite un fișier…",
+      "one": "{{name}} trimite un fișier…",
+      "two": "{{a}} și {{b}} trimit fișiere…",
+      "many": "{{count}} persoane trimit fișiere…"
+    }
+  },
+  "settings": {
+    "title": "Setări",
+    "language": {
+      "heading": "Limbă",
+      "description": "Alege limba folosită în întreaga aplicație."
+    },
+    "theme": {
+      "heading": "Temă",
+      "description": "Luminoasă, întunecată sau urmează sistemul. Alegerea se salvează în contul tău și se aplică pe toate dispozitivele.",
+      "options": {
+        "light": "Luminoasă",
+        "dark": "Întunecată",
+        "system": "Sistem"
+      }
+    },
+    "notifications": {
+      "heading": "Notificări",
+      "description": "Primește o notificare de sistem când vine un mesaj nou într-o filă inactivă.",
+      "pushLabel": "Notificări web push",
+      "deniedHint": "Notificările sunt blocate. Permite-le din setările site-ului browserului, apoi reîncarcă pagina.",
+      "unsupportedHint": "Browserul tău nu acceptă notificările web push.",
+      "errors": {
+        "permissionDismissed": "Ai închis dialogul de permisiune. Apasă din nou comutatorul ca să încerci iar.",
+        "vapidLoadFailed": "Nu am putut încărca setările de notificări de pe server. Reîncarcă pagina și încearcă din nou.",
+        "subscribeFailed": "Nu am putut activa notificările. Verifică conexiunea și încearcă din nou.",
+        "rollbackFailed": "Notificările sunt într-o stare inconsistentă. Apasă comutatorul din nou ca să resincronizezi."
+      },
+      "dismissError": "Închide"
+    },
+    "install": {
+      "heading": "Instalează aplicația",
+      "description": "Instalează Chatrix pe dispozitiv — o iconiță proprie, splash screen și o fereastră fără bara de adresă.",
+      "installButton": "Instalează",
+      "installedHint": "Chatrix este deja instalat pe acest dispozitiv.",
+      "iosInstructions": "Pe iOS, deschide meniul Share în Safari și apasă „Adaugă la ecranul de start”.",
+      "unsupportedHint": "Browserul tău nu oferă buton de instalare. Încearcă Chrome, Edge sau Safari (macOS Sonoma+)."
+    }
+  },
+  "profile": {
+    "title": "Profilul meu",
+    "savedHint": "Salvat",
+    "fields": {
+      "username": "Nume utilizator",
+      "usernameHint": "Identificatorul contului. Nu poate fi schimbat.",
+      "nickname": "Nume afișat",
+      "bio": "Despre",
+      "bioPlaceholder": "O descriere scurtă pe care o vor vedea ceilalți."
+    },
+    "actions": {
+      "save": "Salvează modificările"
+    },
+    "avatar": {
+      "uploadLabel": "Schimbă avatarul",
+      "clearLabel": "Elimină avatarul",
+      "undoLabel": "Anulează modificarea",
+      "viewLabel": "Vezi poza"
+    },
+    "errors": {
+      "nicknameRequired": "Numele afișat este obligatoriu.",
+      "nicknameTooShort": "Numele afișat trebuie să aibă cel puțin 2 caractere.",
+      "nicknameWhitespace": "Numele afișat nu poate începe sau termina cu spațiu.",
+      "bioTooLong": "Descrierea este prea lungă."
+    },
+    "storage": {
+      "heading": "Stocare",
+      "usedOf": "{{used}} din {{quota}}",
+      "exemptHint": "Doar atașamentele din chat-uri contează la această limită. Avatarurile sunt scutite.",
+      "error": "Nu am putut încărca informațiile de stocare."
+    },
+    "files": {
+      "heading": "Fișierele mele",
+      "empty": "Niciun atașament încă.",
+      "error": "Nu am putut încărca fișierele tale.",
+      "downloadLabel": "Descarcă",
+      "deleteLabel": "Șterge",
+      "pageOf": "Pagina {{page}} din {{total}}",
+      "nextPage": "Pagina următoare",
+      "prevPage": "Pagina anterioară",
+      "sort": {
+        "sizeDesc": "Cele mai mari întâi",
+        "sizeAsc": "Cele mai mici întâi",
+        "newest": "Cele mai noi întâi",
+        "oldest": "Cele mai vechi întâi"
+      },
+      "confirmDelete": {
+        "title": "Ștergi acest fișier?",
+        "description": "„{{name}}” va fi eliminat definitiv, iar chat-urile care îl referențiau vor pierde atașamentul. Acțiunea nu poate fi anulată.",
+        "confirmLabel": "Șterge"
+      }
+    }
+  },
+  "peerProfile": {
+    "title": "Profil utilizator",
+    "loadError": "Nu am putut încărca acest profil.",
+    "fields": {
+      "username": "Nume utilizator",
+      "bio": "Despre"
+    }
+  },
+  "chats": {
+    "title": "Chat-uri",
+    "search": "Caută chat-uri, persoane, grupuri",
+    "newChat": "Chat nou",
+    "fab": {
+      "newChat": "Chat nou",
+      "newGroup": "Grup nou"
+    },
+    "tabs": {
+      "all": "Toate",
+      "unread": "Necitite",
+      "groups": "Grupuri"
+    },
+    "emptyListTitle": "Inbox-ul tău e liniștit",
+    "emptyListSubtitle": "Începe o conversație pentru a apărea aici. Toți cei cărora le scrii vor apărea în listă.",
+    "noSelection": {
+      "title": "Nicio conversație deschisă",
+      "subtitle": "Selectează un chat din listă sau începe unul nou cu butonul de mai jos."
+    },
+    "loadError": "Nu am putut încărca chat-urile.",
+    "retry": "Reîncearcă",
+    "noSearchResults": "Nimic nu a corespuns \"{{query}}\".",
+    "noFilterResults": "Niciun chat nu corespunde acestui filtru.",
+    "attachmentOnly": "📎 Atașament",
+    "newChatDialog": {
+      "directTitle": "Chat direct nou",
+      "directDescription": "Caută pe cineva după numele de utilizator sau cel afișat pentru a începe o conversație.",
+      "groupTitle": "Grup nou",
+      "groupDescription": "Alege un nume și invită cel puțin o persoană.",
+      "searchPlaceholder": "Caută...",
+      "groupNamePlaceholder": "Numele grupului",
+      "groupNameRequired": "Numele grupului este obligatoriu.",
+      "groupNameTooLong": "Numele grupului trebuie să aibă cel mult 100 de caractere.",
+      "minMembers": "Adaugă cel puțin un membru.",
+      "selected": "Selectați ({{count}})",
+      "removeMember": "Elimină pe {{name}}",
+      "typeMore": "Scrie cel puțin {{min}} caractere pentru a căuta.",
+      "searching": "Se caută…",
+      "noResults": "Niciun utilizator nu corespunde cu \"{{query}}\".",
+      "submitDirect": "Începe chat",
+      "submitGroup": "Creează grupul",
+      "createError": "Nu am putut crea chat-ul. Încearcă din nou.",
+      "searchError": "Nu am putut rula căutarea.",
+      "draftEmpty": "Salută pe {{name}} — primul mesaj creează chat-ul."
+    },
+    "rowMenu": {
+      "clearHistory": "Șterge istoricul meu",
+      "deleteDirect": "Șterge chat-ul",
+      "deleteGroup": "Șterge grupul",
+      "leaveGroup": "Părăsește grupul"
+    },
+    "headerMenu": {
+      "openLabel": "Acțiuni chat"
+    },
+    "info": {
+      "title": "Info",
+      "titleDirect": "Info utilizator",
+      "titleGroup": "Info grup",
+      "memberProfile": {
+        "title": "Profil membru",
+        "back": "Înapoi la grup",
+        "notFound": "Membru indisponibil."
+      },
+      "username": "Nume utilizator",
+      "email": "Email",
+      "bio": "Despre",
+      "viewAvatar": "Vezi avatarul",
+      "changeAvatar": "Schimbă fotografia grupului",
+      "removeAvatar": "Elimină fotografia grupului",
+      "removeAvatarConfirm": {
+        "title": "Elimini fotografia grupului?",
+        "description": "Membrii vor vedea iconița implicită de grup. Poți încărca o fotografie nouă oricând.",
+        "confirm": "Elimină"
+      },
+      "memberCount_one": "{{count}} membru",
+      "memberCount_few": "{{count}} membri",
+      "memberCount_other": "{{count}} de membri",
+      "membersHeading": "Membri",
+      "youSuffix": "(tu)",
+      "role": {
+        "owner": "Proprietar",
+        "admin": "Administrator",
+        "member": "Membru"
+      },
+      "rename": {
+        "editLabel": "Redenumește grupul",
+        "errorBlank": "Numele nu poate fi gol."
+      },
+      "actions": {
+        "menuLabel": "Acțiuni asupra membrului",
+        "promoteToAdmin": "Numește administrator",
+        "demoteToMember": "Retrogradează la membru",
+        "transferOwnership": "Transferă dreptul de proprietar",
+        "removeFromGroup": "Elimină din grup"
+      },
+      "addMember": {
+        "button": "Adaugă",
+        "title": "Adaugă un membru",
+        "description": "Alege un utilizator pe care vrei să îl adaugi în acest grup.",
+        "searchPlaceholder": "Caută după nume utilizator sau pseudonim…"
+      },
+      "leaveGroup": {
+        "button": "Părăsește grupul"
+      },
+      "confirmKick": {
+        "title": "Elimini {{name}}?",
+        "description": "Își va pierde accesul la grup și la mesajele acestuia. Îl poți readăuga mai târziu.",
+        "confirmLabel": "Elimină"
+      },
+      "confirmTransfer": {
+        "title": "Transferi dreptul de proprietar către {{name}}?",
+        "description": "Va deveni noul proprietar. Tu vei fi retrogradat la administrator și nu vei mai putea să redenumești, să ștergi grupul sau să schimbi rolurile membrilor.",
+        "confirmLabel": "Transferă dreptul"
+      },
+      "confirmLeave": {
+        "title": "Părăsești acest grup?",
+        "description": "Vei pierde accesul la grup și la mesajele lui. Ceilalți membri nu vor fi notificați.",
+        "confirmLabel": "Părăsește grupul"
+      },
+      "ownerLeave": {
+        "title": "Părăsești ca proprietar",
+        "description": "Proprietarii nu pot părăsi grupul direct. Alege una dintre opțiunile de mai jos.",
+        "deleteOption": {
+          "label": "Șterge tot grupul",
+          "hint": "Toate mesajele și atașamentele sunt eliminate pentru fiecare membru. Acțiunea nu poate fi anulată."
+        },
+        "transferOption": {
+          "label": "Transferă dreptul și pleacă",
+          "hint": "Alege un alt membru ca nou proprietar. Vei fi retrogradat la administrator și apoi vei părăsi grupul.",
+          "disabledHint": "Nu există alți membri cărora să le transferi dreptul de proprietar."
+        },
+        "pick": {
+          "title": "Alege noul proprietar",
+          "description": "El va deveni proprietar. Tu vei fi retrogradat la administrator și vei părăsi imediat grupul.",
+          "transferring": "Transfer dreptul și părăsesc grupul…"
+        }
+      }
+    },
+    "deleteChat": {
+      "error": "Nu am putut șterge: {{reason}}",
+      "direct": {
+        "title": "Ștergi chat-ul cu {{name}}?",
+        "description": "Alege dacă ștergi chat-ul doar pentru tine sau și pentru {{name}}. În orice caz, acțiunea nu poate fi anulată.",
+        "justForMe": "Șterge doar pentru mine",
+        "forBoth": "Șterge pentru mine și {{name}}"
+      },
+      "group": {
+        "title": "Ștergi grupul {{name}}?",
+        "description": "Grupul, mesajele și toate atașamentele vor fi eliminate definitiv pentru toți membrii. Această acțiune nu poate fi anulată.",
+        "confirm": "Șterge grupul"
+      }
+    }
+  },
+  "chat": {
+    "notFound": "Chat-ul nu a fost găsit.",
+    "loadError": "Nu am putut încărca mesajele.",
+    "edited": "editat",
+    "jumpToBottom": "Salt la cel mai recent mesaj",
+    "dateSeparator": {
+      "today": "Astăzi",
+      "yesterday": "Ieri"
+    },
+    "composer": {
+      "placeholder": "Scrie un mesaj…",
+      "editPlaceholder": "Editează mesajul…",
+      "attach": "Atașează un fișier",
+      "emoji": "Inserează emoji",
+      "send": "Trimite",
+      "save": "Salvează modificarea",
+      "editing": "Editezi mesajul",
+      "cancelEdit": "Anulează editarea",
+      "attachSheet": {
+        "title": "Atașează fișiere",
+        "chooseFiles": "Alege fișiere"
+      },
+      "dropTitle": "Eliberează fișierele pentru a le atașa",
+      "dropSubtitle": "Până la {{max}} fișiere per mesaj · {{sizeMb}} MB fiecare",
+      "attachments": {
+        "tooLarge": "{{name}} depășește {{sizeMb}} MB.",
+        "unsupported": "Tipul fișierului {{name}} nu este acceptat.",
+        "maxFiles": "Maximum {{max}} atașamente per mesaj.",
+        "offline": "Ești offline. Reconectează-te și reîncearcă.",
+        "uploadFailed": "Încărcarea a eșuat",
+        "retry": "Reîncearcă",
+        "remove": "Elimină"
+      }
+    },
+    "message": {
+      "sending": "Se trimite…",
+      "failed": "Eroare la trimitere",
+      "retry": "Reîncearcă",
+      "attachmentUnavailable": "Atașament indisponibil"
+    },
+    "viewer": {
+      "download": "Descarcă",
+      "close": "Închide",
+      "zoomIn": "Mărește",
+      "zoomOut": "Micșorează",
+      "loadError": "Nu am putut încărca fișierul.",
+      "speed": "Viteză",
+      "video": {
+        "loading": "Se încarcă videoclipul ({{size}})…",
+        "unsupported": {
+          "title": "Format video neacceptat",
+          "description": "Browserul tău nu poate reda formatul {{format}}. Descarcă fișierul ca să-l deschizi în alt player."
+        }
+      }
+    },
+    "actions": {
+      "copy": "Copiază",
+      "edit": "Editează",
+      "delete": "Șterge",
+      "downloadAll": "Descarcă tot ({{count}})"
+    },
+    "deleteConfirm": {
+      "title": "Ștergi acest mesaj?",
+      "description": "Va fi eliminat pentru toți participanții la chat. Această acțiune nu poate fi anulată.",
+      "confirm": "Șterge"
+    }
+  },
+  "pwa": {
+    "banner": {
+      "title": "Instalează Chatrix",
+      "description": "Experiență nativă mai rapidă, cu iconiță proprie, splash screen și fereastră dedicată.",
+      "install": "Instalează"
+    },
+    "topbar": {
+      "install": "Instalează Chatrix"
+    },
+    "iosModal": {
+      "title": "Instalează Chatrix pe iOS",
+      "description": "Pe iOS aplicațiile web se instalează doar din Safari",
+      "step1": "Deschide pagina în Safari, apoi apasă butonul Share",
+      "step2": "Derulează lista de acțiuni de jos și apasă „Adaugă la ecranul de start”",
+      "step3": "Apasă „Adaugă” în dreapta sus pentru confirmare"
+    },
+    "update": {
+      "title": "O versiune nouă este disponibilă",
+      "action": "Reîncarcă"
+    }
+  }
+}
