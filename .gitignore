@@ -21,7 +21,7 @@ Thumbs.db
 **/.nyc_output
 
 # IDEs and editors
-/.idea
+.idea/
 .project
 .classpath
 .c9/
@@ -30,11 +30,7 @@ Thumbs.db
 *.sublime-workspace
 
 # IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+.vscode/
 
 # dotenv
 **/.env
