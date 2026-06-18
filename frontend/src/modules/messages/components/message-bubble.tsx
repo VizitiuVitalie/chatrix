@@ -201,8 +201,8 @@ function MessageAttachment({ file }: { file: FileResource }): ReactElement {
           <div className="text-foreground truncate font-medium">
             {file.originalName}
           </div>
-          <div className="text-muted-foreground text-xs">
-            {formatExtension(file.mimeType)} · {formatBytes(file.sizeBytes)}
+          <div className="text-muted-foreground truncate text-xs">
+            {formatExtension(file)} · {formatBytes(file.sizeBytes)}
           </div>
         </div>
       </button>
@@ -220,8 +220,8 @@ function MessageAttachment({ file }: { file: FileResource }): ReactElement {
         <div className="text-foreground truncate font-medium">
           {file.originalName}
         </div>
-        <div className="text-muted-foreground text-xs">
-          {formatExtension(file.mimeType)} · {formatBytes(file.sizeBytes)}
+        <div className="text-muted-foreground truncate text-xs">
+          {formatExtension(file)} · {formatBytes(file.sizeBytes)}
         </div>
       </div>
       <Download className="text-muted-foreground h-4 w-4 shrink-0" />
@@ -229,9 +229,13 @@ function MessageAttachment({ file }: { file: FileResource }): ReactElement {
   );
 }
 
-function formatExtension(mime: string): string {
-  const parts = mime.split('/');
-  return (parts[1] ?? mime).toUpperCase();
+function formatExtension(file: FileResource): string {
+  const dotIndex = file.originalName.lastIndexOf('.');
+  if (dotIndex > 0 && dotIndex < file.originalName.length - 1) {
+    return file.originalName.slice(dotIndex + 1).toUpperCase();
+  }
+  const subtype = file.mimeType.split('/')[1] ?? file.mimeType;
+  return subtype.toUpperCase();
 }
 
 function formatBytes(bytes: number): string {
