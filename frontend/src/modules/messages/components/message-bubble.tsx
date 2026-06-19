@@ -107,14 +107,15 @@ function MessageBubbleImpl({
 
       {message.content !== null && message.content.length > 0 ? (
         <div
-          className={`flex items-end gap-x-2 ${
+          className={`relative whitespace-pre-wrap break-words ${
             message.files.length > 0 ? 'mt-2' : ''
           }`}
         >
-          <div className="min-w-0 whitespace-pre-wrap break-words">
-            {message.content}
-          </div>
-          {meta}
+          {message.content}
+          <span aria-hidden className="invisible inline-block select-none pl-2">
+            {meta}
+          </span>
+          <span className="absolute bottom-0 right-0">{meta}</span>
         </div>
       ) : message.files.length > 0 ? (
         <div className="mt-1 flex justify-end">{meta}</div>
