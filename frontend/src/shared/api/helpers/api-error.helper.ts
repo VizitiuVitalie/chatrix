@@ -20,7 +20,7 @@ export function classifyError(error: unknown): ApiErrorKind {
   if (error instanceof AxiosError) {
     if (!error.response) return 'network';
     const status = error.response.status;
-    if (status === 401 || status === 403) return 'auth';
+    if (status === 401) return 'auth';
     if (status >= 500) return 'server';
     return 'other';
   }
