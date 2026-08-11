@@ -15,6 +15,7 @@ import {
   ConversationHeader,
   ConversationHeaderContent,
 } from '@/modules/messages/components/conversation-header';
+import { useBackGestureClose } from '@/shared/hooks/use-back-gesture-close';
 import { primeIosKeyboardViewportForFocusHandoff } from '@/shared/hooks/use-ios-keyboard-viewport';
 import { useIsLg } from '@/shared/hooks/use-is-lg';
 
@@ -73,25 +74,7 @@ export function DraftConversationView({
     };
   }, [cancelDraft, isDraftPeerInfoOpen, closeDraftPeerInfo]);
 
-  useEffect(() => {
-    if (typeof window === 'undefined') return undefined;
-    window.history.pushState({ chatrixDraftOpen: true }, '');
-    const handlePopState = (event: PopStateEvent): void => {
-      const state = event.state as { chatrixDraftOpen?: boolean } | null;
-      if (state?.chatrixDraftOpen === true) return;
-      cancelDraft();
-    };
-    window.addEventListener('popstate', handlePopState);
-    return (): void => {
-      window.removeEventListener('popstate', handlePopState);
-      const state = window.history.state as {
-        chatrixDraftOpen?: boolean;
-      } | null;
-      if (state?.chatrixDraftOpen === true) {
-        window.history.back();
-      }
-    };
-  }, [cancelDraft]);
+  useBackGestureClose(true, cancelDraft, 'chatrixDraftOpen');
 
   const avatarUrl = peer.thumbnailUrl ?? peer.avatarUrl;
   const useIosShell = IS_IOS && !isLg;
