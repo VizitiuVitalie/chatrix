@@ -78,6 +78,6 @@ import { TasksModule } from './tasks/tasks.module';
 })
 export class AppModule implements NestModule {
   public configure(consumer: MiddlewareConsumer): void {
-    consumer.apply(RequestContextMiddleware).forRoutes('*');
+    consumer.apply(RequestContextMiddleware).forRoutes('*path');
   }
 }
