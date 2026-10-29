@@ -24,7 +24,7 @@ services:
       - net
 
   minio:
-    image: minio/minio:RELEASE.2025-09-07T16-13-09Z
+    image: pgsty/silo:RELEASE.2026-10-26T00-00-00Z
     container_name: chatrix_minio_dev
     restart: unless-stopped
     command: server /data --console-address ":9001"
@@ -37,7 +37,7 @@ services:
     volumes:
       - miniodata:/data
     healthcheck:
-      test: ['CMD-SHELL', 'curl -fS http://127.0.0.1:9000/minio/health/live']
+      test: ['CMD', 'curl', '-fS', 'http://127.0.0.1:9000/minio/health/live']
       interval: 30s
       timeout: 5s
       retries: 3
