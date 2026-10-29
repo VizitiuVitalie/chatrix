@@ -15,6 +15,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule, { bufferLogs: true });
 
   app.useLogger(app.get(Logger));
+  app.enableShutdownHooks();
 
   const config = app.get(ConfigService);
   const port = config.get<number>('BACKEND_PORT');
@@ -23,7 +24,7 @@ async function bootstrap() {
   app.setGlobalPrefix('api');
 
   const expressApp = app.getHttpAdapter().getInstance() as Application;
-  expressApp.set('trust proxy', 'loopback');
+  expressApp.set('trust proxy', ['loopback', 'uniquelocal']);
 
   app.use(cookieParser());
 
