@@ -3,7 +3,11 @@
 Real-time chat application with direct and group conversations, file sharing,
 read receipts, presence, and web push notifications.
 
-- **Backend** — NestJS 11, PostgreSQL, TypeORM, Socket.io, MinIO (S3-compatible storage)
+**Live:** [chatrix.app](https://chatrix.app) — demo logins `demo1` and `demo2`,
+password `demo1234` (sign in with one in a private window to chat between them)
+
+- **Backend** — NestJS 11, PostgreSQL, TypeORM, Socket.io, S3-compatible storage
+  (Silo, a maintained MinIO fork)
 - **Frontend** — React 19, Vite, TypeScript, TailwindCSS, TanStack Query
 - **Auth** — JWT access tokens + an httpOnly refresh cookie backed by rotating,
   revocable database sessions
@@ -102,10 +106,11 @@ connects to the same origin the SPA is served from, so it needs no separate URL.
 
 ## Production deployment
 
-The production stack is a single Docker Compose project — Postgres, MinIO, the
-backend image, and an nginx reverse proxy. nginx serves the built SPA and
-proxies `/api`, `/socket.io`, and `/storage` to the backend and MinIO, so the
-whole app lives behind one origin (no CORS, no separate frontend host).
+The production stack is a single Docker Compose project — Postgres, Silo (the
+S3-compatible store), the backend image, and an nginx reverse proxy. nginx
+serves the built SPA and proxies `/api`, `/socket.io`, and `/storage` to the
+backend and the object store, so the whole app lives behind one origin (no
+CORS, no separate frontend host).
 
 ```bash
 cd backend
@@ -116,7 +121,7 @@ cp .env.prod.example .env.prod && $EDITOR .env.prod
 # 2. Build the SPA into the nginx mount
 yarn build:spa
 
-# 3. Build the backend image and start the stack (nginx on port 80)
+# 3. Build the backend image and start the stack (nginx on 127.0.0.1:80)
 yarn docker:up:prod
 
 # 4. Verify
@@ -146,6 +151,15 @@ Set `FRONTEND_ORIGIN`, `S3_PUBLIC_URL`, and `VITE_API_URL` to the public domain
 building the SPA, and leave `COOKIE_DOMAIN` empty so the refresh cookie stays
 host-only. nginx listens on `127.0.0.1:80` only, so the tunnel is the sole
 public entrance.
+
+To ship an update to a running server:
+
+```bash
+git pull
+cd backend
+yarn build:spa
+yarn docker:up:prod:tunnel
+```
 
 ## Scripts
 
