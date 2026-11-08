@@ -46,7 +46,7 @@ shared types package. Each builds and ships on its own.
 - **Node.js 22+**
 - **Yarn 1.x** (backend) and **npm** (frontend)
 - **Docker** with Docker Compose (Postgres, MinIO, and the production stack)
-- **ngrok** — optional, only to expose a local production stack to the internet
+- **Cloudflare account and a domain** — optional, only to publish the production stack to the internet
 
 ## Local development
 
@@ -85,7 +85,7 @@ Copy each template and fill in the values:
 |---|---|---|
 | `backend/.env.dev.example` | `backend/.env.dev` | Local development (defaults work) |
 | `backend/.env.prod.example` | `backend/.env.prod` | Production backend |
-| `backend/infra/.env.prod.infra.example` | `backend/infra/.env.prod.infra` | ngrok credentials (kept out of the app container) |
+| `backend/infra/.env.prod.infra.example` | `backend/infra/.env.prod.infra` | Cloudflare Tunnel token (kept out of the app container) |
 | `frontend/.env.prod.example` | `frontend/.env.prod` | SPA build (`VITE_API_URL`) |
 
 Secrets to generate for production:
@@ -128,19 +128,24 @@ always picked up. The container applies pending migrations on startup and
 refuses to boot on a broken schema. Tear down with `yarn docker:down:prod`
 (volumes persist).
 
-### Exposing it with ngrok (optional)
+### Publishing with Cloudflare Tunnel (optional)
 
-To publish the local production stack over the internet:
+The `cloudflared` service dials out to Cloudflare, so the host needs no open web
+ports and TLS is terminated at Cloudflare's edge. In the Cloudflare dashboard,
+create a tunnel and add a published application that points your domain at
+`http://nginx:80`. Then:
 
 ```bash
 cp infra/.env.prod.infra.example infra/.env.prod.infra
-# set NGROK_AUTHTOKEN and your reserved NGROK_URL, then:
-yarn tunnel:prod                  # opens the tunnel (blocking)
+# set TUNNEL_TOKEN to the tunnel token, then:
+yarn docker:up:prod:tunnel
 ```
 
-Set `FRONTEND_ORIGIN`, `COOKIE_DOMAIN`, `S3_PUBLIC_URL`, and `VITE_API_URL` to
-the ngrok host before building the SPA. The authtoken is passed as a CLI flag so
-it overrides any global `~/.config/ngrok/ngrok.yml`.
+Set `FRONTEND_ORIGIN`, `S3_PUBLIC_URL`, and `VITE_API_URL` to the public domain
+(`https://<domain>`, `https://<domain>/storage`, `https://<domain>/api`) before
+building the SPA, and leave `COOKIE_DOMAIN` empty so the refresh cookie stays
+host-only. nginx listens on `127.0.0.1:80` only, so the tunnel is the sole
+public entrance.
 
 ## Scripts
 
@@ -152,8 +157,8 @@ it overrides any global `~/.config/ngrok/ngrok.yml`.
 | `yarn build` · `lint` · `format` | Compile / lint / format |
 | `yarn docker:up` · `docker:down` · `docker:logs` | Dev stack (Postgres + MinIO) |
 | `yarn docker:up:prod` · `docker:down:prod` · `docker:logs:prod` | Production stack |
+| `yarn docker:up:prod:tunnel` | Production stack plus the Cloudflare Tunnel |
 | `yarn build:spa` | Build the SPA into the nginx mount |
-| `yarn tunnel:prod` | Open the ngrok tunnel |
 | `yarn migration:generate:dev` · `migration:run:dev` · `migration:revert:dev` | TypeORM migrations (`:prod` variants target the prod env) |
 
 **Frontend** (`cd frontend`)
